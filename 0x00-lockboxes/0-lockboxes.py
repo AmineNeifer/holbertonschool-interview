@@ -3,7 +3,7 @@
 
 
 def canUnlockAll(boxes):
-    """ checks if there is an empty list in the middle 
+    """ checks if there is an empty list in the middle
     or the beginning of the list"""
     for i in range(len(boxes)):
         if not boxes[i] and i < len(boxes) - 1:
