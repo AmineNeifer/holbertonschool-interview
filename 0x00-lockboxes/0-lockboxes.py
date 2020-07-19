@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ contains a function that returns whether all boxes can be opened or not"""
 
 
