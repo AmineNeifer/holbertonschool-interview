@@ -18,7 +18,6 @@ def canUnlockAll(boxes):
 
     except IndexError:
         pass
-    
     opened = [i for i in boxes[0]]
     if not opened:
         return False
@@ -26,8 +25,6 @@ def canUnlockAll(boxes):
     closed = [i for i in range(1, len(boxes)) if i not in opened]
     if len(boxes) == 1:
         return True
-
-
     for index in opened:
         if (index == 0):
             continue
