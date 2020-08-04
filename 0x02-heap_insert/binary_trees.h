@@ -2,7 +2,6 @@
 #define _BINARY_TREES_H_
 
 #include <stddef.h>
-
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -24,6 +23,11 @@ typedef struct binary_tree_s heap_t;
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 heap_t *heap_insert(heap_t **root, int value);
-void traverse_binary_tree(heap_t *root, heap_t *new);
+heap_t *array_binary_tree(heap_t *root, heap_t *new);
+size_t binary_tree_size(heap_t *tree);
+heap_t *array_fill(heap_t *root, heap_t **array, heap_t *new);
+void add_node(heap_t *root, int n, int *array);
+void heapify (heap_t *root, heap_t *new);
+void heapify2(heap_t **root, heap_t *new);
 
 #endif /* _BINARY_TREES_H_ */
