@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * binary_tree_node - insert a node in a binary tree using max-heap.
+ * heap_insert - insert a node in a binary tree using max-heap.
  *
- * @parent: parent of the node.
+ * @root: root of the node.
  * @value: value n to put for the node.
  *
  * Return: node pointer to the new node, NULL on failure.
@@ -36,10 +36,18 @@ heap_t *heap_insert(heap_t **root, int value)
 	}
 	return (new);
 }
-
+/**
+ * heapify2 - swap nodes.
+ *
+ * @root: parent of the node.
+ * @value: value n to put for the node.
+ *
+ * Return: node pointer to the new node, NULL on failure.
+ */
 void heapify2(heap_t **root, heap_t *new)
 {
 	heap_t *parent = new->parent, *otherchild;
+
 	if (parent->left && parent->left != new)
 		parent->left->parent = new;
 	if (parent->right && parent->right != new)
@@ -77,9 +85,18 @@ void heapify2(heap_t **root, heap_t *new)
 	if (!new->parent)
 		*root = new;
 }
+/**
+ * array_binary_tree - does the array
+ *
+ * @root: root of the heap.
+ * @new: the new node.
+ *
+ * Return: new node.
+ */
 heap_t *array_binary_tree(heap_t *root, heap_t *new)
 {
 	heap_t *array[1024];
+
 	if (!root)
 		return (NULL);
 	return (array_fill(root, array, new));
