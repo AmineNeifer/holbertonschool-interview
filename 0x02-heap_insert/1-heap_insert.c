@@ -15,10 +15,10 @@ heap_t *heap_insert(heap_t **root, int value)
 	heap_t *new;
 
 	if (!root)
-		return NULL;
+		return (NULL);
 	new = malloc(sizeof(heap_t));
 	if (!new)
-		return NULL;
+		return (NULL);
 	new->parent = NULL;
 	new->n = value;
 	new->left = NULL;
@@ -40,7 +40,7 @@ heap_t *heap_insert(heap_t **root, int value)
  * heapify2 - swap nodes.
  *
  * @root: parent of the node.
- * @value: value n to put for the node.
+ * @new: address of the new node
  *
  * Return: node pointer to the new node, NULL on failure.
  */
