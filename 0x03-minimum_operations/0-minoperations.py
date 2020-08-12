@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 
+""" function minimum operations"""
+
+
 def minOperations(n):
     """ Return min number of operations needed copy paste and get n number of Hs"""
     count = 0
