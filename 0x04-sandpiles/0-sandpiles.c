@@ -25,7 +25,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		printf("=\n");
 		print_gridy(grid);
 		topple_sandpiles(grid);
-		
 	}
 	copy_grid(grid1, grid);
 }
@@ -102,7 +101,7 @@ void print_gridy(int grid[3][3])
 	}
 }
 /**
- * copy_grid - copies grid2 to grid1
+ * copy_grid - copies grid2 to grid1.
  *
  * @grid1: 3x3 matrix.
  * @grid2: 3x3 matrix.
