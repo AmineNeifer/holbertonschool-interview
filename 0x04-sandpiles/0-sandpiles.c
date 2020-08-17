@@ -12,27 +12,26 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int grid[3][3], i, j;
 
-	printf("=\n");
+	//printf("=\n");
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
 		{
-			if (j)
-				printf(" ");
+			//if (j)
+			//	printf(" ");
 			grid[i][j] = grid1[i][j] + grid2[i][j];
-			printf("%d", grid[i][j]);
+			//printf("%d", grid[i][j]);
 		}
-		printf("\n");
+		//printf("\n");
 	}
+	//printf("%d\n", check_sandpiles(grid));
 	while (check_sandpiles(grid))
 	{
 
+		printf("=\n");
+		print_gridy(grid);
 		topple_sandpiles(grid);
-		if (check_sandpiles(grid))
-		{
-			printf("=\n");
-			print_gridy(grid);
-		}
+		
 	}
 	copy_grid(grid1, grid);
 }
