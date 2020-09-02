@@ -19,7 +19,10 @@ try:
                 if v != 0:
                     print("{}: {}".format(k, v))
 except (KeyboardInterrupt, SystemExit):
+    pass
+finally:
     print("File size: {}".format(file_size))
-    for k, v in s_codes.items():
+    for k in sorted(s_codes.keys()):
+        v = s_codes[k]
         if v != 0:
             print("{}: {}".format(k, v))
