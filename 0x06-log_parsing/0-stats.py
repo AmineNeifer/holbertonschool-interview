@@ -13,12 +13,12 @@ try:
         code = line.split(" ")[7]
         if code in s_codes.keys():
             s_codes[code] += 1
-            if i % 10 == 0:
-                print("File size: {}".format(file_size))
-                for k in sorted(s_codes.keys()):
-                    v = s_codes[k]
-                    if v != 0:
-                        print("{}: {}".format(k, v))
+        if i % 10 == 0:
+            print("File size: {}".format(file_size))
+            for k in sorted(s_codes.keys()):
+                v = s_codes[k]
+                if v != 0:
+                    print("{}: {}".format(k, v))
 except KeyboardInterrupt:
     pass
 finally:
