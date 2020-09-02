@@ -11,13 +11,14 @@ try:
         file_size += int(line.split(" ")[-1].split('\n')[0])
         i += 1
         code = line.split(" ")[7]
-        s_codes[code] += 1
-        if i % 10 == 0:
-            print("File size: {}".format(file_size))
-            for k in sorted(s_codes.keys()):
-                v = s_codes[k]
-                if v != 0:
-                    print("{}: {}".format(k, v))
+        if code in s_codes.keys():
+            s_codes[code] += 1
+            if i % 10 == 0:
+                print("File size: {}".format(file_size))
+                for k in sorted(s_codes.keys()):
+                    v = s_codes[k]
+                    if v != 0:
+                        print("{}: {}".format(k, v))
 except KeyboardInterrupt:
     pass
 finally:
