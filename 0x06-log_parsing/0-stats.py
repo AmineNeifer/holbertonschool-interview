@@ -18,7 +18,7 @@ try:
                 v = s_codes[k]
                 if v != 0:
                     print("{}: {}".format(k, v))
-except (KeyboardInterrupt, SystemExit):
+except KeyboardInterrupt:
     pass
 finally:
     print("File size: {}".format(file_size))
