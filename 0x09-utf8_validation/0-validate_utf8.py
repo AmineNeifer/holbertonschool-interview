@@ -10,11 +10,12 @@ def validUTF8(data):
     128  64  32  16   8  4  2  1
     """
     i = 0
+    for byte in data:
+        if byte > 247:
+            return False
     while i < len(data):
         if data[i] < 128:
             i += 1
-        elif data[i] >= 248:
-            return False
         elif data[i] >= 240:
             i += 1
             try:
