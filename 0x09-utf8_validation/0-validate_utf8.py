@@ -17,18 +17,27 @@ def validUTF8(data):
             return False
         elif data[i] >= 240:
             i += 1
-            for j in range(3):
-                i += j
-                if not (128 <= data[i + j] <= 191):
-                    return False
+            try:
+                for j in range(3):
+                    i += j
+                    if not (128 <= data[i + j] <= 191):
+                        return False
+            except IndexError:
+                return False
         elif data[i] >= 224:
             i += 1
-            for j in range(2):
-                i += j
-                if not (128 <= data[i + j] <= 191):
-                    return False
+            try:
+                for j in range(2):
+                    i += j
+                    if not (128 <= data[i + j] <= 191):
+                        return False
+            except IndexError:
+                return False
         elif data[i] >= 192:
             i += 1
-            if not (128 <= data[i] <= 191):
+            try:
+                if not (128 <= data[i] <= 191):
+                    return False
+            except IndexError:
                 return False
     return True
