@@ -8,58 +8,35 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int size, i, *array;
-	listint_t *current = *head;
+	listint_t *current = *head, *first = *head;
 
 	if (!*head)
 		return (1);
 
-	size = size_list(head);
-	array = malloc(sizeof(int) * size);
-
-	if (!array)
-		return (0);
-
-	for (i = 0; i < size; i++)
-	{
-		array[i] = current->n;
+	while (current && current->next)
 		current = current->next;
-	}
-	return (palindrome(array, size));
-}
-/**
- * size_list - counts the length of linked list.
- *
- * @head: head of linked list.
- *
- * Return: number of nodes of linked list.
- */
-int size_list(listint_t **head)
-{
-	listint_t *current = *head;
-	int size = 0;
 
-	while (current)
-	{
-		size++;
-		current = current->next;
-	}
-	return (size);
+	return (palindrome(first, current));
 }
 /**
  * palindrome - checks if an array is palindrome.
  *
- * @array: int array.
- * @size: array size;
+ * @first: the first node to compare.
+ * @last: the second node to compae.
  *
  * Return: 1 if palindrome, 0 if not.
  */
-int palindrome(int *array, int size)
+int palindrome(listint_t *first, listint_t *last)
 {
-	int i;
+	listint_t *current = first;
 
-	for (i = 0; i < size / 2; i++)
-		if (array[i] != array[size - i - 1])
-			return (0);
+	if (first->n == last->n)
+	{
+		while (current->next && current->next != last)
+			current = current->next;
+		return (palindrome(first->next, current));
+	}
+	if (first == last || (first->next == last && first->n == last->n))
+		return (0);
 	return (1);
 }
