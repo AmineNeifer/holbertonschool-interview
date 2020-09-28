@@ -32,7 +32,7 @@ int slide_line(int *line, size_t size, int direction)
  */
 void treat_line(int *line, size_t size, int direction)
 {
-	size_t i, begin;
+	size_t i;
 
 	if (direction == SLIDE_LEFT)
 		for (i = 0; i < size - 1; i++)
