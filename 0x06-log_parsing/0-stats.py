@@ -11,7 +11,7 @@ try:
         try:
             file_size += int(line.split(" ")[-1].split('\n')[0])
         except ValueError:
-            file_size += int(line.split(" ")[-2].split('\n')[0])
+            file_size += int(line.split(" ")[-2])
         i += 1
         code = line.split(" ")[7]
         if code in s_codes.keys():
