@@ -9,9 +9,9 @@ try:
     file_size = 0
     for line in sys.stdin:
         try:
-            file_size += int(line.split(" ")[7].split('\n')[0])
+            file_size += int(line.split(" ")[-1].split('\n')[0])
         except ValueError:
-            pass
+            file_size += int(line.split(" ")[-2].split('\n')[0])
         i += 1
         code = line.split(" ")[7]
         if code in s_codes.keys():
