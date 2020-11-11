@@ -11,11 +11,11 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 
 	size_t idx, idx_x;
+	skiplist_t *current, *express;
 
 	if (!list)
 		return (NULL);
-	skiplist_t *current = list, *express;
-
+	current = list;
 	while (current)
 	{
 		if (current->express)
