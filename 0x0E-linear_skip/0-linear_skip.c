@@ -9,7 +9,6 @@
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-
 	size_t i, i_x, ex_idx;
 	int ex_n;
 	skiplist_t *current, *express;
