@@ -11,6 +11,11 @@ def rain(walls):
     """
     if not walls:
         return 0
+    if not isinstance(walls, list):
+        return 0
+    for wall in walls:
+        if not isinstance(wall, int):
+            return 0
     water = []
     i, j = 0, 0
     while i < len(walls) and walls[i] == 0:
