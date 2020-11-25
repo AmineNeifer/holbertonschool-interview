@@ -39,5 +39,5 @@ def rain_helper(i, j, walls, water):
     if j == len(walls):
         return water
     width = j - i - 1
-    water.append(width * walls[i])
+    water.append(width * min(walls[i], walls[j]))
     return rain_helper(j, j + 1, walls, water)
