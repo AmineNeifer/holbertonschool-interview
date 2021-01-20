@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
 /**
@@ -112,6 +113,12 @@ void print_array(int *num, int len)
 	i = 0;
 	while (num[i] == 0)
 		i++;
+	if (i >= len)
+	{
+		_putchar('0');
+		_putchar('\n');
+		return;
+	}
 	for (; i < len; i++)
 	{
 		_putchar(num[i] + '0');
