@@ -45,15 +45,23 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
 	if (value == array[mid])
 	{
 		if (value == array[mid - 1])
+		{
 			return (recursive_binary(array, mid - 1, mid, value));
+		}
 		else if (value == array[mid + 1])
+		{
 			return (recursive_binary(array, mid, mid + 1, value));
+		}
 		return ((int)mid);
 	}
 	if (value > array[mid])
+	{
 		return (recursive_binary(array, mid + 1, end, value));
+	}
 	else
-		return (recursive_binary(array, begin, mid - 1, value));
+	{
+		return (recursive_binary(array, begin, mid, value));
+	}
 }
 /**
  * advanced_binary - binary search algo
