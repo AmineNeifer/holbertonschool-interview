@@ -31,7 +31,6 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
 {
 	size_t mid;
 
-	print_array(array, begin, end);
 	if (begin == end && array[begin] != value)
 		return (-1);
 
@@ -41,21 +40,8 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
 			return (recursive_binary(array, begin - 1, end, value));
 		return (begin);
 	}
+	print_array(array, begin, end);
 	mid = (begin + end) / 2;
-	/*if (value == array[mid])
-	{
-		if (value == array[mid - 1])
-		{
-			printf("lahné\n");
-			return (recursive_binary(array, mid - 1, mid, value));
-		}
-		else if (value == array[mid + 1])
-		{
-			printf("lahné1\n");
-			return (recursive_binary(array, mid, mid + 1, value));
-		}
-		return ((int)mid);
-	}*/
 	if (value > array[mid])
 	{
 		return (recursive_binary(array, mid + 1, end, value));
@@ -76,5 +62,7 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
+	if (!array)
+		return (-1);
 	return (recursive_binary(array, 0, size - 1, value));
 }
