@@ -49,7 +49,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 				express = express->next;
 			i = current->index;
 			i_x = express->index;
-			printf("%s [%lu] and [%lu]\na", msg, i, i_x);
+			printf("%s [%lu] and [%lu]\n", msg, i, i_x);
 			return (search(current, value));
 
 		}
