@@ -42,6 +42,8 @@ void heap_sort(int arr[], size_t n)
 {
 	int i;
 
+	if (!arr)
+		return;
 	for (i = n / 2 - 1; i >= 0; i--)
 		heapify(arr, n, n, i);
 
