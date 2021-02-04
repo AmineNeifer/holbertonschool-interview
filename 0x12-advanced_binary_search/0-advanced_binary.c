@@ -31,6 +31,9 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
 {
 	size_t mid;
 
+	print_array(array, begin, end);
+	if (value == array[begin])
+		return (begin);
 	if (begin == end && array[begin] != value)
 		return (-1);
 
@@ -40,7 +43,6 @@ int recursive_binary(int *array, size_t begin, size_t end, int value)
 			return (recursive_binary(array, begin - 1, end, value));
 		return (begin);
 	}
-	print_array(array, begin, end);
 	mid = (begin + end) / 2;
 	if (value > array[mid])
 	{
