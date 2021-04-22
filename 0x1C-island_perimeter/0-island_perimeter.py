@@ -2,6 +2,8 @@
 """
 Contains island_perimeter function.
 """
+
+
 def island_perimeter(grid):
     """
     returns the perimeter of the island described in grid.
@@ -13,26 +15,28 @@ def island_perimeter(grid):
         for j in range(cols):
             num = 0
             if grid[i][j] == 1:
+
+                if i == 0:
+                    num += 1
+                elif grid[i - 1][j] == 0:
+                    num += 1
+
+                if j == 0:
+                    num += 1
+                elif grid[i][j - 1] == 0:
+                    num += 1
+
                 try:
-                    if grid[i-1][j] == 0:
-                        num += 1 
+                    if grid[i + 1][j] == 0:
+                        num += 1
                 except IndexError:
-                    num +=1
+                    num += 1
+
                 try:
-                    if grid[i+1][j] == 0:
-                        num += 1 
+                    if grid[i][j + 1] == 0:
+                        num += 1
                 except IndexError:
-                    num +=1
-                try:
-                    if grid[i][j-1] == 0:
-                        num += 1 
-                except IndexError:
-                    num +=1
-                try:
-                    if grid[i][j+1] == 0:
-                        num += 1 
-                except IndexError:
-                    num +=1
+                    num += 1
+
             somme += num
     return somme
-
