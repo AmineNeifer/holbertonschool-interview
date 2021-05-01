@@ -17,7 +17,10 @@ int wildcmp(char *string, char *pattern)
 		return (wildcmp(string + 1, pattern + 1));
 
 	if (*pattern == '*')
+	{
+		if (*(pattern + 1) == '*')
+			return (wildcmp(string, pattern + 1));
 		return (wildcmp(string + 1, pattern) || wildcmp(string, pattern + 1));
-
+	}
 	return (0);
 }
