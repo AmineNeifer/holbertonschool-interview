@@ -8,7 +8,8 @@
  */
 int isSorted(int *array, size_t size)
 {
-	for (size_t i = 0; i < size - 1; i++)
+    size_t i;
+	for (i = 0; i < size - 1; i++)
 	{
 		if (array[i] > array[i + 1])
 		return (0);
